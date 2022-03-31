@@ -37,7 +37,14 @@ closeModalBtn[0].addEventListener('click', function () {
     if (e.key == 'Escape') {modalW.style.display = "none";}
   })
 
+  modalW.addEventListener('click', function (e) {
+    if (e.target == modalW) {
+    modalW.style.display = "none";
+    }
+})
+
   // DRAG N DROP 
+
   for (let card of cards) {
     card.addEventListener('dragstart', dragstart);
     card.addEventListener('dragend', dragend);

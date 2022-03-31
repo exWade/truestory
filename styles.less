@@ -5,6 +5,7 @@
 }
 
 body {
+  height     : 100vh;
   padding    : 0;
   margin     : 0;
   font-family: Helvetica, sans-serif;
@@ -61,16 +62,19 @@ header {
 }
 
 .photo-card {
-  display         : flex;
-  align-items     : center;
-  width           : calc(375px*0.9);
-  height          : calc(456px*0.9);
-  background-color: white;
-  box-shadow      : 0px 0px 33px rgba(0, 0, 0, 0.2);
-  font-family     : 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
-  font-size       : calc(24px*0.9);
-  transition      : 0.1s ease-in-out;
-  cursor          : grab;
+  display           : flex;
+  align-items       : center;
+  width             : calc(375px*0.9);
+  height            : calc(456px*0.9);
+  background-color  : white;
+  box-shadow        : 0px 0px 33px rgba(0, 0, 0, 0.2);
+  font-family       : 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+  font-size         : calc(24px*0.9);
+  -webkit-transition: 0.1s ease-in-out;
+  -moz-transition   : 0.1s ease-in-out;
+  -o-transition     : 0.1s ease-in-out;
+  transition        : 0.1s ease-in-out;
+  cursor            : grab;
 
   &:active {
     cursor: grabbing;
@@ -92,6 +96,9 @@ header {
       background-repeat  : no-repeat;
       background-size    : cover;
       background-position: center;
+      -webkit-transition : 0.2s linear;
+      -moz-transition    : 0.2s linear;
+      -o-transition      : 0.2s linear;
       transition         : 0.2s linear;
     }
 
@@ -120,15 +127,18 @@ header {
         max-width  : calc(190px*0.9);
 
         &::before {
-          position        : absolute;
-          display         : block;
-          bottom          : 0;
-          left            : 0;
-          width           : 0;
-          content         : "";
-          height          : 3px;
-          background-color: black;
-          transition      : width 0.15s ease-in-out;
+          position          : absolute;
+          display           : block;
+          bottom            : 0;
+          left              : 0;
+          width             : 0;
+          content           : "";
+          height            : 3px;
+          background-color  : black;
+          -webkit-transition: width 0.15s ease-in-out;
+          -moz-transition   : width 0.15s ease-in-out;
+          -o-transition     : width 0.15s ease-in-out;
+          transition        : width 0.15s ease-in-out;
         }
       }
     }
@@ -138,6 +148,9 @@ header {
     width              : 100%;
     height             : 270px;
     backface-visibility: hidden;
+    -webkit-transform  : translate3d(0, 0, 0);
+    -moz-transform     : translate3d(0, 0, 0);
+    -o-transform       : translate3d(0, 0, 0);
     transform          : translate3d(0, 0, 0);
     overflow           : hidden;
   }
@@ -152,24 +165,30 @@ header {
   align-items     : center;
 
   .card-image-add {
-    position        : relative;
-    display         : flex;
-    width           : 100px;
-    height          : 100px;
-    background-color: #659daa9c;
-    margin          : auto;
-    border-radius   : 16px;
-    align-items     : center;
-    justify-content : center;
-    transition      : 0.25s linear;
+    position          : relative;
+    display           : flex;
+    width             : 100px;
+    height            : 100px;
+    background-color  : #659daa9c;
+    margin            : auto;
+    border-radius     : 16px;
+    align-items       : center;
+    justify-content   : center;
+    -webkit-transition: 0.25s linear;
+    -moz-transition   : 0.25s linear;
+    -o-transition     : 0.25s linear;
+    transition        : 0.25s linear;
   }
 }
 
 .add-custom-icon {
-  display        : flex;
-  align-items    : center;
-  justify-content: center;
-  transition     : 0.3s linear;
+  display           : flex;
+  align-items       : center;
+  justify-content   : center;
+  -webkit-transition: 0.3s linear;
+  -moz-transition   : 0.3s linear;
+  -o-transition     : 0.3s linear;
+  transition        : 0.3s linear;
 
   &::before {
     content         : "";
@@ -216,16 +235,24 @@ header {
   /* Black w/ opacity */
 
   .modal-whiteboard {
-    position            : relative;
-    margin              : auto;
-    width               : calc(1622px*0.9);
-    height              : 90%;
-    background-color    : white;
-    border-radius       : 8px;
-    padding             : 70px;
-    animation-name      : zoom;
-    animation-duration  : 0.4s;
-    animation-play-state: running;
+    position        : relative;
+    margin          : auto;
+    width           : calc(1622px*0.9);
+    height          : 90%;
+    background-color: white;
+    border-radius   : 8px;
+    padding         : 70px;
+    z-index         : 20000;
+
+    -webkit-animation-name: zoom;
+    -moz-animation-name   : zoom;
+    -o-animation-name     : zoom;
+    animation-name        : zoom;
+
+    -webkit-animation-duration: 0.4s;
+    -moz-animation-duration   : 0.4s;
+    -o-animation-duration     : 0.4s;
+    animation-duration        : 0.4s;
 
     .whiteboard-container {
       position: relative;
@@ -289,14 +316,17 @@ header {
 }
 
 .close {
-  position   : absolute;
-  top        : 15px;
-  right      : 20px;
-  color      : rgb(54, 48, 48);
-  font-size  : 48px;
-  font-weight: bold;
-  transition : 0.3s;
-  border     : 1px solid gold;
+  position          : absolute;
+  top               : 15px;
+  right             : 20px;
+  color             : rgb(54, 48, 48);
+  font-size         : 48px;
+  font-weight       : bold;
+  -webkit-transition: 0.3s;
+  -moz-transition   : 0.3s;
+  -o-transition     : 0.3s;
+  transition        : 0.3s;
+  border            : 1px solid gold;
 
   &:hover {
     cursor: pointer;

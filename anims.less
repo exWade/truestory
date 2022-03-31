@@ -1,14 +1,41 @@
 .place:nth-of-type(5) .photo-card .photo-card-content .card-image .card-image-add:hover {
-  transform          : scale(1.1);
-  transition         : 0.4s linear;
+  -webkit-transform: scale(1.1);
+  -moz-transform   : scale(1.1);
+  -o-transform     : scale(1.1);
+  transform        : scale(1.1);
+
+  -webkit-transition: 0.4s linear;
+  -moz-transition   : 0.4s linear;
+  -o-transition     : 0.4s linear;
+  transition        : 0.4s linear;
+
   animation-fill-mode: forwards;
 
   .add-custom-icon {
-    transform                : rotate(90deg);
-    transition               : 0.3s linear;
-    animation-timing-function: linear;
-    animation-fill-mode      : forwards;
-    animation-direction      : alternate;
+    -webkit-transform: rotate(90deg);
+    -moz-transform   : rotate(90deg);
+    -o-transform     : rotate(90deg);
+    transform        : rotate(90deg);
+
+    -webkit-transition: 0.3s linear;
+    -moz-transition   : 0.3s linear;
+    -o-transition     : 0.3s linear;
+    transition        : 0.3s linear;
+
+    -webkit-animation-timing-function: linear;
+    -moz-animation-timing-function   : linear;
+    -o-animation-timing-function     : linear;
+    animation-timing-function        : linear;
+
+    -webkit-animation-fill-mode: forwards;
+    -moz-animation-fill-mode   : forwards;
+    -o-animation-fill-mode     : forwards;
+    animation-fill-mode        : forwards;
+
+    -webkit-animation-timing-function: alternate;
+    -moz-animation-timing-function   : alternate;
+    -o-animation-timing-function     : alternate;
+    animation-direction              : alternate;
   }
 }
 
@@ -17,17 +44,44 @@
 */
 
 .workspace .place:hover .photo-card {
-  transform          : scale(1.1);
-  transition         : transform 0.1s ease-in-out;
-  backface-visibility: hidden;
+  -webkit-transform: scale(1.1);
+  -moz-transform   : scale(1.1);
+  -o-transform     : scale(1.1);
+  transform        : scale(1.1);
+
+  -webkit-transition: transform 0.1s ease-in-out;
+  -moz-transition   : transform 0.1s ease-in-out;
+  -o-transition     : transform 0.1s ease-in-out;
+  transition        : transform 0.1s ease-in-out;
+
+  -webkit-backface-visibility: hidden;
+  -moz-backface-visibility   : hidden;
+  -o-backface-visibility     : hidden;
+  backface-visibility        : hidden;
+
+  -webkit-will-change: transform;
+  -moz-will-change   : transform;
+  -o-will-change     : transform;
   will-change        : transform;
-  overflow           : hidden;
+
+  overflow: hidden;
 }
 
 .workspace .place .photo-card-content .card-image:hover {
-  transform  : scale(1.03);
-  transition : transform 0.2s linear;
-  will-change: transform;
+  -webkit-transform: scale(1.03);
+  -moz-transform   : scale(1.03);
+  -o-transform     : scale(1.03);
+  transform        : scale(1.03);
+
+  -webkit-transition: transform 0.2s linear;
+  -moz-transition   : transform 0.2s linear;
+  -o-transition     : transform 0.2s linear;
+  transition        : transform 0.2s linear;
+
+  -webkit-will-change: transform;
+  -moz-will-change   : transform;
+  -o-will-change     : transform;
+  will-change        : transform;
 }
 
 
@@ -41,12 +95,16 @@
 
 @keyframes zoom {
   from {
-    transform: scale(0)
+    -webkit-transform: scale(0);
+    -moz-transform   : scale(0);
+    -o-transform     : scale(0);
+    transform        : scale(0);
   }
 
   to {
-    transform: scale(1)
+    -webkit-transform: scale(1);
+    -moz-transform   : scale(1);
+    -o-transform     : scale(1);
+    transform        : scale(1);
   }
 }
-
-/* КАКАЯ ТО ХУЕТА С АНИМАЦИЕЙ МОДАЛЬНОГО ОКНА */
