@@ -1,0 +1,323 @@
+* {
+  box-sizing: border-box;
+  padding   : 0;
+  margin    : 0;
+}
+
+body {
+  padding    : 0;
+  margin     : 0;
+  font-family: Helvetica, sans-serif;
+  background : linear-gradient(90deg, #4b6cb7 55%, #2a4c8fcd 80%);
+}
+
+a {
+  text-decoration: none;
+  color          : black;
+}
+
+header {
+  position        : sticky;
+  display         : inline-block;
+  top             : 0;
+  width           : 100%;
+  height          : 50px;
+  font-size       : 32px;
+  background-color: white;
+  border-bottom   : 1px solid rgba(0, 0, 0, 0.4);
+  z-index         : 2022;
+
+  .header-logo {
+    display       : block;
+    width         : 250px;
+    height        : inherit;
+    text-align    : center;
+    margin        : auto;
+    text-transform: uppercase;
+  }
+}
+
+.workspace {
+  display        : flex;
+  flex-direction : row;
+  flex-wrap      : wrap;
+  align-items    : center;
+  justify-content: flex-start;
+  width          : calc(1622px*0.9);
+  margin-top     : calc(40px*0.9);
+  margin-left    : auto;
+  margin-right   : auto;
+
+  .place {
+    margin-right : calc(40px*0.9);
+    margin-bottom: calc(30px*0.9);
+    width        : calc(375px*0.9);
+    height       : calc(456px*0.9);
+
+    &:nth-of-type(4) {
+      margin-right: 0px;
+    }
+  }
+}
+
+.photo-card {
+  display         : flex;
+  align-items     : center;
+  width           : calc(375px*0.9);
+  height          : calc(456px*0.9);
+  background-color: white;
+  box-shadow      : 0px 0px 33px rgba(0, 0, 0, 0.2);
+  font-family     : 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+  font-size       : calc(24px*0.9);
+  transition      : 0.1s ease-in-out;
+  cursor          : grab;
+
+  &:active {
+    cursor: grabbing;
+  }
+
+  .photo-card-content {
+    position    : relative;
+    display     : inline-block;
+    margin-left : 33.75px;
+    margin-right: 33.75px;
+    width       : calc(300px*0.9);
+    height      : calc(406px*0.9);
+    overflow    : hidden;
+
+    .card-image {
+      width              : 100%;
+      height             : 100%;
+      background-image   : url('https://cdn2.albumoftheyear.org/250x/album/195220--.jpg');
+      background-repeat  : no-repeat;
+      background-size    : cover;
+      background-position: center;
+      transition         : 0.2s linear;
+    }
+
+    .image-caption {
+      margin-top   : calc(8px*0.9);
+      overflow     : hidden;
+      text-overflow: ellipsis;
+    }
+
+    .addition {
+      position   : absolute;
+      display    : block;
+      text-align : right;
+      bottom     : 0px;
+      right      : 0px;
+      font-weight: bold;
+      max-width  : calc(190px*0.9);
+
+      .addition-wrapper {
+        position   : relative;
+        display    : block;
+        text-align : right;
+        bottom     : 0px;
+        right      : 0px;
+        font-weight: bold;
+        max-width  : calc(190px*0.9);
+
+        &::before {
+          position        : absolute;
+          display         : block;
+          bottom          : 0;
+          left            : 0;
+          width           : 0;
+          content         : "";
+          height          : 3px;
+          background-color: black;
+          transition      : width 0.15s ease-in-out;
+        }
+      }
+    }
+  }
+
+  .card-img-container {
+    width              : 100%;
+    height             : 270px;
+    backface-visibility: hidden;
+    transform          : translate3d(0, 0, 0);
+    overflow           : hidden;
+  }
+}
+
+/*   ПОТОМ РАСПРЕДЕЛИТЬ ЧЕРЕЗ JS      */
+
+.place:nth-of-type(5) .photo-card .photo-card-content .card-image {
+  background-image: none;
+  background-color: #a8babe7c;
+  display         : flex;
+  align-items     : center;
+
+  .card-image-add {
+    position        : relative;
+    display         : flex;
+    width           : 100px;
+    height          : 100px;
+    background-color: #659daa9c;
+    margin          : auto;
+    border-radius   : 16px;
+    align-items     : center;
+    justify-content : center;
+    transition      : 0.25s linear;
+  }
+}
+
+.add-custom-icon {
+  display        : flex;
+  align-items    : center;
+  justify-content: center;
+  transition     : 0.3s linear;
+
+  &::before {
+    content         : "";
+    margin          : auto;
+    display         : block;
+    position        : absolute;
+    width           : 12px;
+    height          : 56px;
+    border-radius   : 24px;
+    background-color: #e7dada;
+  }
+
+  &::after {
+    content         : "";
+    position        : absolute;
+    display         : block;
+    width           : 56px;
+    height          : 12px;
+    border-radius   : 24px;
+    background-color: #e7dada;
+  }
+}
+
+.modal {
+  display         : none;
+  /* Hidden by default */
+  position        : fixed;
+  /* Stay in place */
+  z-index         : 10000;
+  /* Sit on top */
+  align-items     : center;
+  justify-content : center;
+  left            : 0;
+  top             : 0;
+  width           : 100%;
+  /* Full width */
+  height          : 100%;
+  /* Full height */
+  overflow        : auto;
+  /* Enable scroll if needed */
+  background-color: rgb(0, 0, 0);
+  /* Fallback color */
+  background-color: rgba(0, 0, 0, 0.9);
+  /* Black w/ opacity */
+
+  .modal-whiteboard {
+    position            : relative;
+    margin              : auto;
+    width               : calc(1622px*0.9);
+    height              : 90%;
+    background-color    : white;
+    border-radius       : 8px;
+    padding             : 70px;
+    animation-name      : zoom;
+    animation-duration  : 0.4s;
+    animation-play-state: running;
+
+    .whiteboard-container {
+      position: relative;
+      display : flex;
+      border  : 1px solid gold;
+      width   : 100%;
+      height  : 100%;
+
+      .modal-left-side {
+        display: block;
+        height : 100%;
+        width  : 540px;
+        float  : left;
+        border : 1px solid gold;
+
+        .modalImage-container {
+          position     : relative;
+          width        : 540px;
+          border       : 1px solid gold;
+          border-radius: 8px;
+          float        : left;
+
+          .modal-content-image {
+            position           : absolute;
+            margin             : auto;
+            display            : block;
+            width              : 100%;
+            background-position: center;
+            background-size    : cover;
+            border-radius      : 8px;
+          }
+
+        }
+      }
+
+      .modal-right-side {
+        display    : block;
+        position   : absolute;
+        top        : 0;
+        right      : 0;
+        height     : 100%;
+        width      : 755.8px;
+        margin-left: 24px;
+        float      : right;
+        border     : 1px solid gold;
+
+        .image-title {
+          font-size : 48px;
+          word-wrap : break-word;
+          word-break: keep-all;
+          width     : 100%;
+        }
+
+        .modalImage-caption {
+          font-size: 24px;
+          width    : 100%;
+        }
+      }
+    }
+  }
+}
+
+.close {
+  position   : absolute;
+  top        : 15px;
+  right      : 20px;
+  color      : rgb(54, 48, 48);
+  font-size  : 48px;
+  font-weight: bold;
+  transition : 0.3s;
+  border     : 1px solid gold;
+
+  &:hover {
+    cursor: pointer;
+  }
+}
+
+#card-img {
+  cursor: pointer;
+}
+
+/* DRAG N DROP */
+
+.hold {
+  background: linear-gradient(45deg, rgb(111, 123, 58) 15%, #209cff 100%);
+  color     : #fff;
+}
+
+.hide {
+  display: none;
+}
+
+.place .hovered {
+  border-right: 1px dashed #5ab480b6;
+}

@@ -1,0 +1,52 @@
+.place:nth-of-type(5) .photo-card .photo-card-content .card-image .card-image-add:hover {
+  transform          : scale(1.1);
+  transition         : 0.4s linear;
+  animation-fill-mode: forwards;
+
+  .add-custom-icon {
+    transform                : rotate(90deg);
+    transition               : 0.3s linear;
+    animation-timing-function: linear;
+    animation-fill-mode      : forwards;
+    animation-direction      : alternate;
+  }
+}
+
+/* UPD:  ЧТОБЫ УБРАТЬ ТРЯСКУ ФОТО В КОНТЕЙНЕРЕ НУЖНО ОБНУЛИТЬ 
+          translate3d(0, 0, 0) у контейнера
+*/
+
+.workspace .place:hover .photo-card {
+  transform          : scale(1.1);
+  transition         : transform 0.1s ease-in-out;
+  backface-visibility: hidden;
+  will-change        : transform;
+  overflow           : hidden;
+}
+
+.workspace .place .photo-card-content .card-image:hover {
+  transform  : scale(1.03);
+  transition : transform 0.2s linear;
+  will-change: transform;
+}
+
+
+.photo-card-content .addition .addition-wrapper:hover::before {
+  width: 100%;
+}
+
+.close:hover {
+  color: brown;
+}
+
+@keyframes zoom {
+  from {
+    transform: scale(0)
+  }
+
+  to {
+    transform: scale(1)
+  }
+}
+
+/* КАКАЯ ТО ХУЕТА С АНИМАЦИЕЙ МОДАЛЬНОГО ОКНА */
